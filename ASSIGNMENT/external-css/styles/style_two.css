@@ -1,0 +1,14 @@
+h1 {
+    background-color: rgb(222, 182, 214); 
+    color:rgb(34, 68, 86); ;
+}
+
+h2 {
+    background-color: rgb(175, 46, 141);
+    color: yellow;
+}
+
+p {
+    width: 200px;
+    border: 1px solid black; 
+}
