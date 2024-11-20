@@ -1,0 +1,19 @@
+
+p{
+    font-family: sans-serif;
+    background-color: rgb(156, 152, 152);
+    width: fit-content;
+    padding: 20px;
+}
+
+.large-letter {
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 1;
+    
+}
+
+.rest {
+    font-size: 17px;
+    font-weight: bold;
+}
