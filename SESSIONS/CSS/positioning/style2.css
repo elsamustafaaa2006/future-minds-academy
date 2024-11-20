@@ -1,0 +1,48 @@
+body{
+    padding: 150px;
+}
+
+
+.box{
+    padding: 20px;
+    border: 1px solid brown;
+    border-radius: 10px;
+    height: 400px;
+    width: 400px;
+    background-color: azure;
+    margin-right: 50px;
+}
+
+.box1{
+    position: relative; 
+    z-index: 1;
+}
+
+.box2{
+    position: absolute; right: 150px; top: 150px;
+    background-color: blanchedalmond;
+    z-index: 0;
+}
+
+.box h2{
+    width: fit-content;
+    padding: 10px;
+    border: 1px solid brown;
+    border-radius: 20px;
+    position: absolute;right: 0;
+    background-color: bisque;
+    top: -30px;
+
+}
+
+.box p{
+    position: absolute;
+    bottom: 20px;
+}
+
+.box button{
+    position: absolute; right: 20px; bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+ }
+

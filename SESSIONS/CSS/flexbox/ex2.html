@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex slicing</title>
+    <style>
+        .wrapper{
+            background-color: beige;
+            padding: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .wrapper div{
+            padding: 20px;
+            background-color: chartreuse;
+            flex: 1;
+        }
+
+        .wrapper .one{flex: 2;}
+        .wrapper .two{flex: 1;}
+        .wrapper .three{flex: 1;}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="one">One</div>
+        <div class="two">Two</div>
+        <div class="three">Three</div>
+    </div>
+</body>
+</html>

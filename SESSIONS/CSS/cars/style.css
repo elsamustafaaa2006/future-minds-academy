@@ -1,0 +1,31 @@
+.card {
+    width: 400px;
+    text-align: center;
+    border: 2px solid rgb(190, 190, 190);
+    padding: 20px;
+    border-radius: 20px;
+    transition: 0.5s;
+    float: left;
+    margin: 20px;
+
+
+}
+
+.card img {
+    width: 95%;
+    border-radius: 50%;
+
+}
+
+.card:hover {
+    background-color: beige;
+    box-shadow:rgba(0, 0, 0, 0.22) 0px 15px 12px ;
+    
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+}

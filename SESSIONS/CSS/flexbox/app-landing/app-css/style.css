@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: sans-serif;
+}
+header{
+    width: 1080px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    font-size: 12pt;
+    
+}
+
+ button{
+    background-color: rgb(50, 50, 143);
+    color: white;
+    border-radius: 30px;
+    padding: 10px 40px ;
+    font-size: 12pt;
+ }
+
+
+
+

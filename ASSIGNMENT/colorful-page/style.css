@@ -1,0 +1,19 @@
+body {
+    background-image: url(milky-way.jpeg)
+}
+
+h1 {
+    background-color: rgb(40, 40, 96);
+}
+
+nav {
+    background-color: rgb(74, 71, 71);
+    opacity: 0.5;
+    color: white;
+}
+
+p {
+    background: linear-gradient(to right, white, rgb(6, 6, 93));
+    margin-top: 50px;
+
+}

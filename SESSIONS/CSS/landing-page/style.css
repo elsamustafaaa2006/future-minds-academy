@@ -1,0 +1,104 @@
+body{
+    font-family: sans-serif;
+}
+
+
+.wrapper {
+    width: 1050px;
+    border: 10px solid gray;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.logo {
+    float: left;
+}
+
+nav {
+    float: right;
+}
+
+nav ul li {
+    float: left;
+    list-style-type: none;
+    margin-right: 20px;
+    background-color: antiquewhite;
+    padding: 10px;
+    transition: 0.2s;
+    border-radius: 10px;
+}
+
+nav ul li:hover {
+    background-color: rgb(103, 57, 29);
+    color: white;
+
+}
+
+header {
+    background-image: url(snownight2.png);
+    height: 650px;
+    background-size: cover;
+    position: relative;
+}
+
+header div {
+
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    text-align: center;
+  
+}
+
+header button{
+    padding: 10px 30px;
+    font-size: 18px;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+header button:hover{
+    background-color: rgb(36, 36, 72);
+    color: white;
+    
+}
+
+.section1{
+    margin-top: 30px;
+}
+.section1 img{
+    float: left;
+    margin-right: 30px;
+}
+
+.section1 .section-right{
+    padding-top: 30px;
+}
+
+.section h3{
+    color: rgb(179, 51, 115);
+}
+
+.section2 img{
+    float: right;
+    margin-left: 30px;   
+}
+
+.section2 .section-left{
+    padding-top: 30px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-footer ul{
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+}
+
+
+
