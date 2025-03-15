@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closest Answer</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .result-container {
+            width: 650px;
+            height: 250px;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .players {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16pt;
+        }
+
+        #playerOne, #playerTwo {
+            padding: 0 60px;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="result-container">
+        <div id="answer">
+            <h1></h1>
+        </div>
+        <div class="players">
+            <div id="playerOne">
+                <h1></h1>
+            </div>
+            <div id="playerTwo">
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        //INPUT
+        let answer = Math.floor(Math.random() * 20) + 1;
+
+        let playerOne = parseInt(prompt('Player One:'));
+        let playerTwo = parseInt(prompt('Player Two:'));
+
+
+
+        //VALIDATION
+        if (isNaN(playerOne) || isNaN(playerTwo))
+            throw new Error('Please write only numbers!');
+
+        if ((playerOne < 0 || playerOne > 20) || (playerTwo < 0 || playerTwo > 20)) {
+            throw new Error('Only select numbers between 0-20');
+
+        }
+
+
+
+        //LOGIC
+        let playerOneDistance = Math.abs(answer - playerOne);
+        let playerTwoDistance = Math.abs(answer - playerTwo);
+
+
+        let winner;
+
+        if (playerOneDistance < playerTwoDistance) {
+            winner = 'Player One';
+        }
+
+        else if(playerOneDistance > playerTwoDistance){
+            winner = 'Player Two'
+        }
+
+        else  {
+            winner = "It's a tie";
+        }
+
+       
+
+        
+
+        //OUTPUT
+        document.getElementById('answer').innerHTML = `<h1>The correct answer is: ${answer}</h1>`;
+        document.getElementById("playerOne").innerHTML = `<p>Player One</p><p>${playerOne}</p>`;
+        document.getElementById("playerTwo").innerHTML = `<p>Player Two</p><p>${playerTwo}</p>`;
+
+
+        //color
+        if (winner === "Player One") {
+            document.getElementById("playerOne").style.backgroundColor = "green";
+            document.getElementById("playerTwo").style.backgroundColor = "red";
+        }
+
+        else if (winner === "Player Two") {
+            document.getElementById("playerTwo").style.backgroundColor = "green";
+            document.getElementById("playerOne").style.backgroundColor = "red";
+        }
+
+        else {
+            document.getElementById("playerOne").style.backgroundColor = "orange";
+            document.getElementById("playerTwo").style.backgroundColor = "orange";
+            document.getElementById('answer').innerHTML = `<h1>It's a tie! The answer is ${answer}.</h1> `;
+        }
+
+      
+
+
+
+
+    </script>
+
+</body>
+
+</html>

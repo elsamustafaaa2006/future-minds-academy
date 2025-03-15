@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const firstNumber = parseInt(prompt('First Number:'));
+        const operator = prompt('Operator:');
+        const secondNumber = parseInt(prompt("Second Number:"));
+
+
+        if (isNaN(firstNumber) || isNaN(secondNumber)) {
+            throw new Error('Invalid numbers');
+        }
+
+
+        let result;
+
+        switch (operator) {
+            case '+':
+                result = firstNumber + secondNumber;
+                break;
+
+            case '-':
+                result = firstNumber - secondNumber;
+                break;
+
+            case '*':
+                result = firstNumber * secondNumber;
+                break;
+
+            case '/':
+                if (secondNumber === 0) {
+                    throw new Error('Cannot divide by 0');
+                }
+
+                result = firstNumber / secondNumber;
+                break;
+
+
+            case '%':
+                if (secondNumber === 0) {
+                    throw new Error('Cannot divide by 0');
+                }
+
+                result = firstNumber % secondNumber;
+                break
+
+
+            default:
+                throw new Error('Operator not defined');
+
+
+        }
+
+        alert(`${firstNumber} ${secondNumber} = ${result}`);
+
+
+    </script>
+</body>
+
+</html>
