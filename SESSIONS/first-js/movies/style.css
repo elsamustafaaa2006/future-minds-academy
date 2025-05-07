@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    width: 95%;
+}
+
+body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+aside {
+    width: 350px;
+    position: sticky;
+    background-color: rgb(190, 190, 190);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    padding: 20px;
+    overflow-y: scroll;
+}
+.genre select {
+    width: 100%;
+    padding: 10px;
+}
+
+.movies{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.movies li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.datetime {
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+main iframe {
+    width: 800px;
+    height: 500px;
+}

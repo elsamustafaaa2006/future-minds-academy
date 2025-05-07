@@ -1,0 +1,347 @@
+// Eris Ismajli
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pop The Bubbles</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        user-select: none;
+      }
+      body {
+        height: 100vh;
+        overflow: hidden;
+        font-family: "Luckiest Guy", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background: linear-gradient(
+          to bottom right,
+          rgb(255, 255, 255),
+          rgb(212, 244, 255),
+          rgb(175, 217, 231),
+          rgb(138, 196, 212)
+        );
+      }
+
+      .circle {
+        position: fixed;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1;
+        border: 1px solid rgb(0, 115, 187);
+        -webkit-user-drag: none;
+      }
+
+      .circle:hover {
+        border: 3px solid black;
+      }
+
+      @keyframes animate {
+        0% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(30px, 0);
+        }
+        50% {
+          transform: translate(30px, 30px);
+        }
+        75% {
+          transform: translate(-30px, 30px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+
+      .move {
+        animation: animate 3s ease-in-out infinite;
+      }
+
+      .timer-wrapper {
+        background-color: rgb(40, 40, 40);
+        padding: 15px 25px;
+        border: 3px solid rgb(255, 1, 120);
+        display: inline-block;
+        color: rgb(255, 1, 120);
+        border-radius: 3em;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        z-index: 1;
+        box-shadow: 0 0 100px rgb(255, 255, 255);
+        visibility: visible;
+      }
+
+      .title {
+        font-size: 1.3rem;
+        text-align: center;
+      }
+
+      .timer {
+        position: absolute;
+        bottom: -22px;
+        background-color: rgb(40, 40, 40);
+        padding: 5px 20px;
+        border-radius: 3em;
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      .timer-icon {
+        filter: invert();
+        width: 32px;
+      }
+
+      .timer-icon-wrapper {
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        padding: 5px 5px 1px 5px;
+        background-color: rgb(40, 40, 40);
+        z-index: -1;
+        border-radius: 3em;
+      }
+      @keyframes fadeOut {
+        0% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(0.6);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+
+      .pop-text {
+        position: fixed;
+        color: cyan;
+        left: 0;
+        font-size: 2.5rem;
+        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+          2px 2px 0 black;
+        animation: fadeOut 0.8s ease-out forwards;
+        pointer-events: none;
+        z-index: 3;
+      }
+
+      .win-status {
+        z-index: 4;
+        font-size: 4rem;
+        color: rgb(255, 0, 195);
+        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+          2px 2px 0 black;
+      }
+
+      .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30vh;
+      }
+
+      .game-end-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        gap: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        border: 2px solid rgb(40, 40, 40);
+        color: white;
+        background-color: rgb(40, 40, 40);
+        border-radius: 6px;
+        font-size: 1.3rem;
+        z-index: 4;
+        font-family: "Luckiest Guy", sans-serif;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+
+      button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: rgb(255, 29, 161);
+        transition: width 0.4s ease-in-out;
+        z-index: -1;
+      }
+
+      button:hover::before {
+        width: 100%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="timer-wrapper">
+        <p class="title">POP THE BUBBLES</p>
+        <p class="timer">READY</p>
+        <div class="timer-icon-wrapper">
+          <img
+            class="timer-icon"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNsb2NrLWljb24gbHVjaWRlLWNsb2NrIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwb2x5bGluZSBwb2ludHM9IjEyIDYgMTIgMTIgMTYgMTQiLz48L3N2Zz4="
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="game-end-wrapper">
+        <p class="win-status">YOU WON</p>
+        <button id="restart">RESTART</button>
+      </div>
+    </div>
+    <script>
+      let popSound = new Audio();
+      popSound.src =
+        "https://www.dropbox.com/scl/fi/7w2bkeg1vxwz1uy0yhfow/Pop-sound-effect-AudioTrimmer.com.mp3?rlkey=a77h5hbkmh1w8vti81fvuyxrx&st=2b5kpyif&dl=1";
+      popSound.volume = 0.5;
+      popSound.load();
+
+      let loseSound = new Audio();
+      loseSound.src =
+        "https://www.dropbox.com/scl/fi/imv4vyv1f00xv4cejo7bf/Womp-Womp-Womp-sound-effect.mp3?dl=1";
+      loseSound.load();
+
+      let victorySound = new Audio();
+      victorySound.src =
+        "https://www.dropbox.com/scl/fi/pz6t7htrdlmj4cfnuuqrd/Old-victory-sound-roblox.mp3?dl=1";
+      victorySound.load();
+
+      let restart = document.getElementById("restart");
+      restart.addEventListener("click", () => {
+        location.reload();
+      });
+      let timeInSeconds = 90;
+      let winStatus = document.querySelector(".win-status");
+
+      let gameEnd = document.querySelector(".game-end-wrapper");
+
+      function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+
+        return `${minutes}:${
+          remainingSeconds < 10 ? "0" : ""
+        }${remainingSeconds}`;
+      }
+
+      function updateTimer() {
+        document.querySelector(".timer").textContent =
+          formatTime(timeInSeconds);
+
+        const circles = document.querySelectorAll(".circle");
+
+        if (timeInSeconds > 0) {
+          timeInSeconds--;
+          if (circles.length == 0) {
+            clearInterval(timerInterval);
+            victorySound.play();
+            document.querySelector(".timer-wrapper").style.visibility =
+              "hidden";
+            gameEnd.style.visibility = "visible";
+            winStatus.textContent = "YOU WON!";
+            winStatus.style.color = "lime";
+          }
+        } else {
+          clearInterval(timerInterval);
+
+          if (circles.length > 0) {
+            circles.forEach((el) => {
+              el.style.filter = "blur(8px)";
+              el.style.pointerEvents = "none";
+            });
+
+            loseSound.play();
+            document.querySelector(".timer-wrapper").style.visibility =
+              "hidden";
+            gameEnd.style.visibility = "visible";
+            winStatus.textContent = "YOU LOST";
+            winStatus.style.color = "orange";
+          }else{
+            victorySound.play();
+            document.querySelector(".timer-wrapper").style.visibility =
+              "hidden";
+            gameEnd.style.visibility = "visible";
+            winStatus.textContent = "YOU WON!";
+            winStatus.style.color = "lime";
+          }
+        }
+      }
+
+      const timerInterval = setInterval(updateTimer, 1000);
+
+      let counter = 100;
+
+      for (let i = 0; i < counter; i++) {
+        let circle = document.createElement("img");
+        circle.classList.add("circle");
+        circle.src = "https://i.postimg.cc/FKN4BbDz/pngegg.png";
+
+        circle.classList.add("move");
+
+        let y = Math.floor(Math.random() * 85) + 1;
+        circle.style.top = `${y}%`;
+
+        let x = Math.floor(Math.random() * 90) + 1;
+        circle.style.left = `${x}%`;
+
+        let size = 40 + Math.floor(Math.random() * 80) + 1;
+        circle.style.width = `${size}px`;
+        circle.style.height = `${size}px`;
+
+        let randomDelay = Math.random() * 3;
+        circle.style.animationDelay = `${randomDelay}s`;
+
+        document.body.appendChild(circle);
+      }
+
+      document.body.addEventListener("click", (e) => {
+        if (e.target.classList.contains("circle")) {
+          const rect = e.target.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+
+          const pop = document.createElement("p");
+          pop.classList.add("pop-text");
+          pop.textContent = `${--counter}`;
+          pop.style.left = `${centerX}px`;
+          pop.style.top = `${centerY}px`;
+          pop.style.transform = "translate(-50%, -50%)";
+
+          document.body.appendChild(pop);
+
+          popSound.currentTime = 0;
+          popSound.play();
+
+          pop.addEventListener("animationend", () => {
+            pop.remove();
+          });
+
+          e.target.remove();
+        }
+      });
+    </script>
+  </body>
+</html>

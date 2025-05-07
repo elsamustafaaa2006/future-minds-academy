@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbles</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .circle {
+            position: fixed;
+            border-radius: 100%;
+            animation-name: updown;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes updown {
+            0%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(10px);
+            }
+            100%{
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+   <script>
+        for (let i = 0; i < 300; i++){
+            let circle = document.createElement('div');
+            circle.classList.add('circle');
+
+            //5 95
+            let y = Math.floor(Math.random() * 95) + 1;
+            circle.style.top = `${y}%`;
+
+            let x = Math.floor(Math.random() * 95) + 1;
+            circle.style.left = `${x}%`;
+
+            //40 150
+            let size = 40 + Math.floor(Math.random() * 110) + 1;
+            circle.style.width = `${size}px`;
+            circle.style.height = `${size}px`;
+            circle.style.backgroundColor = '#3010e440';
+
+            circle.style.animationDelay = Math.random() + 's';
+
+            document.body.appendChild(circle);
+        }
+
+        document.body.addEventListener('click', (e) => {
+            if (e.target.classList.contains('circle')){
+                e.target.remove();
+            }
+        });
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+   </script>
+</body>
+</html>

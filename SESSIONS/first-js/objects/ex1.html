@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <table width=""40% border="1">
+        <tr>
+            <th>Cat</th>
+            <th>Mouse</th>
+        </tr>
+
+        <tr>
+            <td id="catinfo"></td>
+            <td id="mouseinfo"></td>
+        </tr>
+    </table>
+    
+    <script>
+        const catinfo = document.querySelector('#catinfo');
+        const mouseinfo = document.querySelector('#mouseinfo');
+
+
+        let cat = {color:"green", x:"200", y:"200"};
+        let mouse ={};
+        mouse.color ="black";
+        mouse.x = 300;
+        mouse.y = 300;
+
+
+        catinfo.innerHTML = `
+            <b>Color:</b> ${cat.color} <br>
+            <b>x:</b> ${cat.x} <br>
+            <b>y:</b> ${cat.y} 
+        `;
+
+        mouseinfo.innerHTML = `
+            <b>Color:</b> ${mouse.color} <br>
+            <b>x:</b> ${mouse.x} <br>
+            <b>y:</b> ${mouse.y} 
+        `;
+
+
+        
+    </script>
+</body>
+</html>

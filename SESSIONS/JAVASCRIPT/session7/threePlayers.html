@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            place-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="background-color: black; padding: 1rem; color: white;">
+        <h1>The correct answer is <span id="answer"></span></h1>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+            <div id="player-1-container">
+                <h2>Player 1</h2>
+                <h3 id="player-1-answer"></h3>
+            </div>
+            <div id="player-2-container">
+                <h2>Player 2</h2>
+                <h3 id="player-2-answer"></h3>
+            </div>
+            <div id="player-3-container">
+                <h2>Player 3</h2>
+                <h3 id="player-3-answer"></h3>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Generate a random number between 1 and 20
+        let answer = Math.floor(Math.random() * 20) + 1;
+
+        // INPUT
+        let playerOneGuess = parseInt(prompt('Player 1, guess:'));
+        let playerTwoGuess = parseInt(prompt('Player 2, guess:'));
+        let playerThreeGuess = parseInt(prompt('Player 3, guess:'));
+
+        // VALIDATION
+        if (isNaN(playerOneGuess) || isNaN(playerTwoGuess) || isNaN(playerThreeGuess)) {
+            throw new Error('Invalid Input');
+        }
+
+        // LOGIC 
+        let playerOneDistance = Math.abs(answer - playerOneGuess);
+        let playerTwoDistance = Math.abs(answer - playerTwoGuess);
+        let playerThreeDistance = Math.abs(answer - playerThreeGuess);
+
+        let winner = 0;
+        if (playerOneDistance < playerTwoDistance && playerOneDistance < playerThreeDistance) {
+            winner = 1;
+        }
+        else if (playerTwoDistance < playerOneDistance && playerTwoDistance < playerThreeDistance) {
+            winner = 2;
+        }
+        else if (playerThreeDistance < playerOneDistance && playerThreeDistance < playerTwoDistance) {
+            winner = 3;
+        }
+
+
+
+        // OUTPUT
+        document.getElementById('answer').innerHTML = answer;
+        document.getElementById('player-1-answer').innerHTML = playerOneGuess;
+        document.getElementById('player-2-answer').innerHTML = playerTwoGuess;
+        document.getElementById('player-3-answer').innerHTML = playerThreeGuess;
+
+        if (winner === 0) {
+            document.getElementById('player-1-container').style.backgroundColor = 'orange';
+            document.getElementById('player-2-container').style.backgroundColor = 'orange';
+            document.getElementById('player-3-container').style.backgroundColor = 'orange';
+        }
+        else {
+            if (winner === 1) {
+                document.getElementById('player-1-container').style.backgroundColor = 'green';
+                document.getElementById('player-2-container').style.backgroundColor = 'red';
+                document.getElementById('player-3-container').style.backgroundColor = 'red';
+            }
+            else if (winner === 2) {
+                document.getElementById('player-1-container').style.backgroundColor = 'red';
+                document.getElementById('player-2-container').style.backgroundColor = 'green';
+                document.getElementById('player-3-container').style.backgroundColor = 'red';
+            }
+            else if (winner === 3) {
+                document.getElementById('player-1-container').style.backgroundColor = 'red';
+                document.getElementById('player-2-container').style.backgroundColor = 'red';
+                document.getElementById('player-3-container').style.backgroundColor = 'green';
+            }
+        }
+    </script>
+</body>
+
+</html>

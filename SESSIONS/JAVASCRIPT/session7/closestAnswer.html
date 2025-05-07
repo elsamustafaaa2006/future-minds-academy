@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+        }
+
+        body{
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            place-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: black; padding: 1rem; color: white;">
+        <h1>The correct answer is <span id="answer"></span></h1>
+        <div style="display: grid; grid-template-columns: 1fr 1fr;">
+            <div id="player-1-container">
+                <h2>Player 1</h2>
+                <h3 id="player-1-answer"></h3>
+            </div>
+            <div id="player-2-container">
+                <h2>Player 2</h2>
+                <h3 id="player-2-answer"></h3>
+            </div>
+        </div>
+    </div>
+    <script>
+        //të gjenerojmë një numër të rastësishëm prej 1 deri 20
+        let answer = Math.floor(Math.random() * 20) + 1;
+
+        //INPUT
+        let playerOneGuess = parseInt(prompt('Player 1, guess:'));
+        let playerTwoGuess = parseInt(prompt('Player 2, guess:'));
+
+        //VALIDATION
+        if (isNaN(playerOneGuess) || isNaN(playerTwoGuess)){
+            throw new Error('Invalid Input');
+        }
+
+        //LOGIC - cili është më afër është fituesi
+        let playerOneDistance = Math.abs(answer - playerOneGuess);
+        let playerTwoDistance = Math.abs(answer - playerTwoGuess);
+
+        let winner = 0;
+        if (playerOneDistance < playerTwoDistance){
+            winner = 1;
+        }
+        else if (playerTwoDistance < playerOneDistance){
+            winner = 2;
+        }
+
+        //OUTPUT
+        document.getElementById('answer').innerHTML = answer;
+        document.getElementById('player-1-answer').innerHTML = playerOneGuess;
+        document.getElementById('player-2-answer').innerHTML = playerTwoGuess;
+
+        if (winner === 0){
+            document.getElementById('player-1-container').style.backgroundColor = 'orange';
+            document.getElementById('player-2-container').style.backgroundColor = 'orange';
+        }
+        else {
+            //nested if's
+            if (winner === 1){
+                document.getElementById('player-1-container').style.backgroundColor = 'green';
+                document.getElementById('player-2-container').style.backgroundColor = 'red';
+            }
+            else if(winner ===2){
+                document.getElementById('player-1-container').style.backgroundColor = 'red';
+                document.getElementById('player-2-container').style.backgroundColor = 'green';
+            }
+            else{
+
+            }
+        }
+    </script>
+</body>
+</html>

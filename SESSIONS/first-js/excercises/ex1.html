@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Numbers</title>
+    <style>
+        button{
+            padding: 20px 40px ;
+            font-size: 20pt;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+
+    <button onclick="loadNum(1)" >1</button>
+    <button onclick="loadNum(2)" >2</button>
+    <button onclick="loadNum(3)" >3</button>
+    <button onclick="loadNum('+')">+</button>
+    <button onclick="loadNum('-')">-</button>
+    <h1 id="theNum">Number</h1>
+
+
+    <script>
+
+    const theNum = document.querySelector('#theNum');
+
+    theNum.textContent = ' ';
+    function loadNum(n) {
+
+    theNum.textContent += n;
+    }
+
+</script>
+
+</body>
+</html>

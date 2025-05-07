@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let lesson = {
+            topic:'Objects and the DOM',
+            isOnline: false,
+            numberOfStudents: 10,
+            schedule: {
+                startTime: '19:00',
+                endTime: '19:30'
+            },
+            printTopic: function(){
+                console.log(this.topic)
+            },
+            changeTopic: function(newTopic){
+                this.topic = newTopic
+            }
+        }
+
+        console.log(lesson.topic);
+    </script>
+</body>
+</html>

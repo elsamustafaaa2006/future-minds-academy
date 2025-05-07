@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>
+        1. Harry Potter, 
+        2. Rich Dad Poor Dad, 
+        3. World War II, 
+        4. Sweet Home Alabama
+    </h1>
+
+    <h1 id="outOrder"></h1>
+    <ol class="movieList"></ol>
+    
+    <script>
+        let books = [
+            'Harry Potter',
+            'Rich Dad Poor Dad',
+            'World War II',
+            'Sweet Home Alabama'
+        ]
+
+        const outOrder =document.querySelector('#outOrder');
+ 
+        outOrder.textContent = 
+        '3. '  +   books[2] + 
+        ', 1. ' +  books[0] + 
+        ', 4. ' +  books[3] +
+        ', 2. ' +  books[1] 
+
+        const movieList =document.querySelector('#movieList');
+        for(let i=0;  i>books.length; i++){
+            movieList.innerHTML += `<li> ${books[i]}</li>`;
+        }
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Store</title>
+</head>
+    <style>
+
+        body {
+            margin: 0;
+            background-color: #f4f4f4;
+
+        }
+
+        #headTitle {
+        justify-self: center;
+        font-family: sans-serif;
+    }
+        #container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+    </style>
+<body>
+
+    <h1 id="headTitle">Fake Store</h1>
+
+    <div id="container"></div>
+
+    <script>
+        fetch('https://fakestoreapi.com/products')
+            .then(response => response.json())
+            .then(products => {
+                let container = document.getElementById('container');
+
+                products.forEach(product => {
+                    const productCart = document.createElement('div');
+                    productCart.style.width = '23%';
+                    productCart.style.margin = '1%';
+                    productCart.style.display = 'flex';
+                    productCart.style.flexDirection = 'column';
+                    productCart.style.justifyContent = 'center';
+                    productCart.style.alignContent = 'center';
+                    productCart.style.backgroundColor = 'white';
+                    productCart.style.padding = '10px';
+                    productCart.style.borderRadius = '8px';
+                    productCart.style.boxShadow = '0 4px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19)';
+                    productCart.style.cursor = 'pointer';
+                    container.appendChild(productCart);
+
+                    const img = document.createElement('img');
+                    img.src = product.image;
+                    img.style.width = '90%';
+                    img.style.height = '200px';
+                    img.style.objectFit = 'contain';
+                    img.style.alignSelf = 'center';
+                    productCart.appendChild(img);
+
+                    const title = document.createElement('h3');
+                    title.textContent = product.title;
+                    productCart.appendChild(title);
+                    title.style.fontFamily = 'Sans-serif'
+                    title.style.fontSize = '16px'
+                    title.style.alignSelf = 'center'
+                    title.style.margin = '10px 0';
+                    title.style.textAlign = 'center';
+
+                    const priceAndRating = document.createElement('div');
+                    priceAndRating.style.display = 'flex';
+                    priceAndRating.style.justifyContent = 'space-around'
+                    priceAndRating.style.alignItems = 'center';
+                    productCart.appendChild(priceAndRating);
+
+                    const price = document.createElement('h4');
+                    price.textContent = `Price: ${product.price}`;
+                    price.style.fontFamily = 'Sans-serif';
+                    price.style.padding = '3px';
+                    price.style.fontSize = '14px';
+                    priceAndRating.appendChild(price);
+
+                    const rating = document.createElement('h4');
+                    rating.textContent = `Rating: ${product.rating.rate}`;
+                    rating.style.fontFamily = 'Sans-serif';
+                    rating.style.fontSize = '14px';
+                    priceAndRating.appendChild(rating);
+
+                    productCart.addEventListener('click', () => {
+                        popUp(product);
+                    });
+
+                });
+            });
+
+            function popUp(product) {
+
+                const thePopUp = document.createElement('div');
+                thePopUp.style.position = 'fixed';
+                thePopUp.style.top = 0;
+                thePopUp.style.left = 0;
+                thePopUp.style.width ='100vw';
+                thePopUp.style.height = '100vh';
+                thePopUp.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+                thePopUp.style.display = 'flex';
+                thePopUp.style.alignItems = 'center';
+                thePopUp.style.justifyContent = 'center';
+                thePopUp.style.zIndex = 1000;
+
+                const popUpContainer = document.createElement('div');
+                popUpContainer.style.backgroundColor = 'white';
+                popUpContainer.style.padding = '20px';
+                popUpContainer.style.borderRadius = '10px';
+                popUpContainer.style.boxShadow = '0 4px rgba(0, 0, 0, 0.4)';
+                popUpContainer.style.width = '80%';
+                popUpContainer.style.fontFamily = 'Sans-serif';
+                popUpContainer.style.textAlign = 'center';
+                popUpContainer.style.maxWidth = '600px';
+
+                const title = document.createElement('h2');
+                title.textContent = product.title;
+                title.style.marginBottom = '15px';
+                popUpContainer.appendChild(title);
+
+                const img = document.createElement('img');
+                img.src = product.image;
+                img.style.width = '200px';
+                img.style.objectFit = 'contain';
+                img.style.marginBottom = '15px';
+                popUpContainer.appendChild(img);
+
+                const desc = document.createElement('p');
+                desc.textContent = product.description;
+                desc.style.fontSize = '16px';
+                desc.style.color = '#33333';
+                desc.style.lineHeight = '1.6';
+                popUpContainer.appendChild(desc);
+
+                const closeBtn = document.createElement('button');
+                closeBtn.textContent = 'Close';
+                closeBtn.style.marginTop = '20px';
+                closeBtn.style.padding = '10px 20px';
+                closeBtn.style.backgroundColor = "red";
+                closeBtn.style.color = 'white';
+                closeBtn.style.border = 'none';
+                closeBtn.style.borderRadius = '5px';
+                closeBtn.style.cursor = 'pointer';
+                closeBtn.addEventListener('click', () => {
+                    document.body.removeChild(thePopUp);
+                });
+
+                popUpContainer.appendChild(closeBtn);
+                thePopUp.appendChild(popUpContainer);
+                document.body.appendChild(thePopUp);
+
+
+            }
+    </script>
+
+</body>
+</html>

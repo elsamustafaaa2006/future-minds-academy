@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Checker</title>
+</head>
+
+<body>
+
+    <script>
+        // const correctPassword = "12341234"; 
+        // let attempts = 3; 
+        // let userInput;
+
+        // do {
+        //     userInput = prompt(`Enter your password (${attempts} ${attempts === 1 ? "try" : "tries"} left):`);
+
+        //     if (userInput === correctPassword) {
+        //         alert("Welcome!");
+        //     }
+
+        //     attempts--;
+
+        //     if (attempts === 0) {
+        //         alert("You can't try anymore.");
+        //     }
+
+        // } 
+        // while (userInput !== correctPassword && attempts > 0);
+
+        let attempts = 3;
+        let userInput; // Declare userInput outside the loop
+
+        do {
+            console.log(`${attempts} tries left`);
+            userInput = prompt("Enter password:"); // Assign value inside the loop
+        } while (userInput !== "12341234" && --attempts > 0);
+
+        console.log(attempts ? "Welcome!" : "You can't try anymore.");
+
+    </script>
+
+</body>
+
+</html>

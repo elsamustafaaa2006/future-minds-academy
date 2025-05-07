@@ -1,0 +1,591 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background-color: #ececec;
+
+}
+
+
+
+/*ASIDE*/
+aside {
+    width: 300px;
+    background-image: url(assets/images/sidebar-1.jpg);
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: color;
+    color: white;
+    height: 100vh;
+    padding: 0px 10px;
+    position: fixed;
+}
+
+.asidetitle {
+    display: flex;
+    gap: 20px;
+    font-size: 9pt;
+    padding: 25px;
+    border-bottom: 1.5px solid #6a6a6a;
+
+}
+
+.asideavatar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border-bottom: 1.5px solid #6a6a6a;
+
+}
+
+.asideimg {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+}
+
+
+.asideul {
+    margin-top: 20px;
+}
+
+.asideul ul li {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style-type: none;
+    padding: 12px 20px;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+
+
+.exmore {
+    position: absolute;
+    right: 22px;
+}
+
+.asideicon:hover {
+    background-color: rgba(131, 128, 128, 0.266);
+    color: white;
+    cursor: pointer;
+}
+
+.dash {
+    background-color: red;
+
+}
+
+
+
+
+/*HEADER*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3em;
+
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    font-size: 14pt;
+}
+
+.circleBTN {
+    background-color: white;
+    border-radius: 50%;
+    padding: 13px;
+    box-shadow: rgba(58, 58, 58, 0.24) 0px 2px 6px;
+    cursor: pointer;
+}
+
+.circleBTN:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+}
+
+.header-right ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.searchbar {
+    border: none;
+    border-bottom: 2px solid gray;
+    background-color: #ececec;
+}
+
+.searchbar:focus {
+    border-bottom: 3px solid purple;
+    outline: none;
+}
+
+.searchBTN {
+    background-color: white;
+    border-radius: 50%;
+    padding: 13px;
+    box-shadow: rgba(58, 58, 58, 0.24) 0px 2px 6px;
+    cursor: pointer;
+}
+
+.searchBTN:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+}
+
+.BTN {
+    cursor: pointer;
+}
+
+.notificationbarbutton {
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    color: white;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: 1px solid white;
+    background-color: red;
+}
+
+.notificationbar {
+    position: relative;
+}
+
+.notificationdropdown {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 20px;
+    background-color: white;
+    width: 250px;
+    border-radius: 3px;
+
+}
+
+.notificationbar:hover .notificationdropdown {
+    z-index: 1;
+    display: block;
+    padding: 10px;
+}
+
+.notificationdropdowntext {
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.notificationdropdowntext:hover {
+    color: white;
+    background-color: red;
+}
+
+
+
+.menuBTN {
+    display: none;
+    background-color: white;
+    border-radius: 50%;
+    padding: 13px;
+    box-shadow: rgba(58, 58, 58, 0.24) 0px 2px 6px;
+    cursor: pointer;
+}
+
+.menuBTN:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+}
+
+
+
+/*MAIN*/
+main {
+    padding: 1.5625rem;
+    margin-left: 18.75em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 79vw;
+}
+
+.allsection {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    position: relative;
+}
+
+
+
+.languageicon {
+    position: absolute;
+    top: -15px;
+    left: 17px;
+    padding: 20px;
+    border-radius: 2.5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+
+}
+
+.table-map-container {
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    z-index: 0;
+    padding: 1rem;
+
+
+}
+
+.Global {
+    margin-left: 80px;
+    font-size: 16pt;
+    font-weight: lighter;
+    width: 100%;
+    padding-bottom: 2.5rem;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+
+
+
+td {
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    padding: 0.75rem;
+    vertical-align: middle;
+}
+
+tr:last-child td {
+    border-bottom: none;
+
+}
+
+
+.flags {
+    width: 18px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.map iframe {
+    width: 100%;
+    margin-top: 50px;
+    border: none;
+    height: 85%;
+}
+
+
+
+
+/*stats*/
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.stats>div {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.card {
+    position: relative;
+}
+
+.squareicon {
+    position: absolute;
+    top: -15px;
+    padding: 20px;
+    border-radius: 2.5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.booking h3 {
+    font-size: 15pt;
+    font-weight: lighter;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.booking p {
+    color: gray;
+    font-size: 11pt;
+}
+
+.warnings {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: gray;
+}
+
+.warnings img {
+    margin-top: 8px;
+    width: 14px;
+}
+
+.bgorange {
+    background-color: orange;
+}
+
+.bgpink {
+    background-color: rgb(228, 77, 122);
+}
+
+.bggreen {
+    background-color: rgb(3, 149, 3);
+}
+
+.bgblue {
+    background-color: rgb(131, 214, 214);
+}
+
+.bggray{
+    color: gray;
+}
+
+.txt {
+    margin-top: 7px;
+    font-size: 10pt;
+}
+
+.stats hr {
+    width: 100%;
+    height: 1px;
+}
+
+
+/*hotelsection*/
+
+.hotelsection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.25rem;
+
+}
+
+.hotelarticle {
+    border-radius: 5px;
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    max-width: 75em;
+}
+
+.hotelsectiontitle {
+    font-weight: lighter;
+    font-size: 18pt;
+}
+
+.cardphoto {
+    border-radius: 4px;
+    width: 100%;
+    transform: translateY(-35px);
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+    transition: 0.6s;
+
+}
+
+.cardphotocontainer:hover .cardphoto {
+    transform: translateY(-50px);
+
+}
+
+.cardphotocontainer:hover .tools {
+    visibility: visible;
+}
+
+.tools {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    transform: translateY(-55px);
+}
+
+.edittools {
+    cursor: pointer;
+}
+
+.hoteltitle {
+    font-weight: lighter;
+    font-size: 15pt;
+    padding: 15px 0px;
+
+}
+
+.hoteltext {
+    text-align: center;
+    transform: translateY(-50px);
+
+}
+
+.hotelprice {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.hotelprice h3{
+    font-weight: lighter;
+
+}
+
+
+.location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+
+
+
+/*footer*/
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
+    padding-bottom: 1rem;
+
+}
+
+hr {
+    width: auto;
+    border: 1px solid #ddd;
+}
+
+.footernav {
+    cursor: pointer;
+    font-size: 11pt;
+    display: flex;
+    gap: 17px;
+}
+
+.author {
+    color: gray;
+    font-size: 10pt;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1024px) {
+    aside {
+        display: none;
+    }
+
+    main {
+        margin-left: 0;
+        width: 100vw;
+    }
+
+    .menuBTN {
+        display: inline;
+        display: flex;
+        justify-content: end;
+    }
+
+    .circleBTN {
+        display: none;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .globalsales {
+        grid-template-columns: 1fr;
+    }
+
+    .table-map-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hotelsection {
+        grid-template-columns: 1fr;
+        gap: 6rem;
+    }
+
+    .map iframe {
+        min-height: 200px;
+        margin-top: 0;
+    }
+
+
+}
+
+@media only screen and (max-width: 768px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+</head>
+
+<body>
+    <table id="mlt" border="1" width="50%">
+
+    </table>
+
+    <input type="text" placeholder="row" id="row"><br>
+    <input type="text" placeholder="col" id="col">
+    <button onclick="loadTable()">Create Table</button>
+
+
+    <script>
+
+        const mlt = document.querySelector('#mlt')
+      
+
+        function createTable(row, col) {
+            let buildTable = '';
+            for (let i = 1; i <= row; i++) {
+
+                if (i == 1) {
+                    buildTable += '<tr style="background-color: green;">';
+                    for (let j = 1; j <= col; j++) {
+                        buildTable += '<td>';
+                        buildTable += i * j;
+                        buildTable += '</td>';
+                    }
+                    buildTable += '</tr>';
+                }
+                else {
+                    buildTable += '<tr id="first">';
+                    for (let j = 1; j <= col; j++) {
+                        if (j == 1) {
+                            buildTable += '<td style="background-color: yellow;">';
+                            buildTable += i * j;
+                            buildTable += '</td>';
+
+                        }
+                        else {
+
+                                buildTable += '<td>';
+                                buildTable += i * j;
+                                buildTable += '</td>';
+                        }
+
+
+                    }
+                    buildTable += '</tr>';
+                }
+
+            }
+            mlt.innerHTML = buildTable;
+        }
+
+
+
+
+
+    </script>
+    <script>
+    const rows = document.querySelector('#row')
+    const cols= document.querySelector('#col')
+
+    function loadTable(){
+        createTable(rows.value, cols.value)
+    }
+    </script>
+</body>
+
+</html>

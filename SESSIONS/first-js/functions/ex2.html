@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <h1 id="output"></h1>
+    <button onclick="calculate(1)">1</button>
+    <button onclick="calculate(2)">2</button>
+    <button  onclick="calculate('+')">+</button>
+    <button  onclick="calculate('-')">-</button>
+    <button  onclick="calculate('calc')">=</button>
+
+
+    <script>
+        const output = document.querySelector('#output');
+
+
+
+        function calculate(n){
+            if(n == 'calc'){
+                output.innerHTML += '=' + eval(output.innerHTML);
+            }
+
+            else{
+                output.innerHTML +=n;
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

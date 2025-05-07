@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seasons</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="logo">
+        LOGO
+    </div>
+    <nav>
+        <ul>
+            <li onclick="showSeason(0)">Spring</li>
+            <li onclick="showSeason(1)">Summer</li>
+            <li onclick="showSeason(2)">Autumn</li>
+            <li onclick="showSeason(3)">Winter</li>
+        </ul>
+    </nav>
+    <main id="stina">
+
+    </main>
+
+    <script>
+        let data = [
+            {
+                title: "Spring",
+                hero: "spring.png"
+            },
+            {
+                title: "Summer",
+                hero: "summer.png"
+            },
+            {
+                title: "Autumn",
+                hero: "autumn.png"
+            },
+            {
+                title: "Winter",
+                hero: "winter.png"
+            }
+        ];
+
+
+    </script>
+
+
+
+    <script>
+
+        const stina = document.querySelector('#stina');
+
+        showSeason(0);
+        function showSeason(s) {
+
+            stina.innerHTML = 
+
+            `<h2  id="title">${data[s].title}</h2>
+            <div id="photo">
+              <img  src="img/${data[s].hero}" alt="">
+            </div>`
+            
+        };
+
+    </script>
+
+
+</body>
+
+</html>

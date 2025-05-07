@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            background-color: rgb(156, 156, 187);
+        }
+
+        .circle {
+            position: fixed;
+            /* top: 90%; */
+            /* left: 80%; */
+            border-radius: 100%;
+            /* width: 100px; */
+            /* height: 100px; */
+            /* background-color: pink; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle"></div>
+
+    <script>
+    for (let i = 0; i < 250; i++) {
+        let circle = document.createElement('div')
+        circle.classList.add('circle');
+
+        let y = Math.floor(Math.random() * 95) + 1;
+        circle.style.top = `${y}%`;
+
+        let x = Math.floor(Math.random() * 95) + 1;
+        circle.style.left = `${x}%`;
+
+        let size = 40 + Math.floor(Math.random() * 110) + 1;
+        circle.style.width = `${size}px`;
+        circle.style.height = `${size}px`;
+        circle.style.backgroundColor = '#3010e450';
+
+        circle.addEventListener('click', function () {
+            circle.remove();
+        });
+
+        document.body.appendChild(circle);
+    }
+
+    document.body.addEventListener('click', (e)=>{
+        if(e.target.classList.contains('circle')){
+            e.target.remove()
+        }
+    })
+        
+
+       
+    </script>
+</body>
+
+</html>

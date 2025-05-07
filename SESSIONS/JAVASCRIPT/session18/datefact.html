@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="date" type="date">
+    <span id="result"></span>
+
+    <script>
+
+        let dateEl = document.getElementById('date');
+        let resultEl = document.getElementById('result');
+
+        dateEl.addEventListener('change', async (e) => {
+            if (!dateEl.value) {
+                return;
+            }
+
+            let date = new Date(dateEl.value)
+
+            let month = date.getMonth() + 1;
+            let day = date.getDate()
+
+            let fact = await getFact(month, day)
+            resultEl.textContent = fact;
+        })
+
+
+
+
+
+        async function getFact(month, day) {
+            const url = `https://numbersapi.p.rapidapi.com/${month}/${day}/date`;
+            const options = {
+                method: 'GET',
+                headers: {
+                    'x-rapidapi-key': 'fac95fe47bmsh40cc0111e9b7e48p1ce149jsnbe678f1f38f3',
+                    'x-rapidapi-host': 'numbersapi.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await fetch(url, options);
+                const result = await response.text();
+                return result;
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        // getFact(10, 25)
+
+    </script>
+</body>
+
+</html>

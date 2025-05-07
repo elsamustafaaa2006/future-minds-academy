@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="taskList"></ul>
+
+    <script>
+      let tasks = [];
+
+      for (let i = 0; i < 5; i++) {
+        let task = prompt("Write a task");
+        tasks.push(task);
+      }
+
+      for (let i = 0; i < tasks.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = tasks[i];
+        document.getElementById("taskList").appendChild(li);
+      }
+    </script>
+  </body>
+</html>

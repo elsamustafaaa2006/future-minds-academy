@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seasons</title>
+    <style>
+        ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+        ul li {
+            cursor: pointer;
+            padding: 10px;
+            background-color: rgb(114, 189, 189);
+        }
+        #loadIframe {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li onclick="loadPage('Home')">Home</li>
+        <li onclick="loadPage('Service')">Services</li>
+        <li onclick="loadPage('About')">About us</li>
+        <li onclick="loadPage('Contact')">Contact</li>
+    </ul>
+
+    <main>
+        <h2 id="title"></h2>
+        <div id="loadIframe"></div>
+        
+    </main>
+
+    <script>
+        const title = document.querySelector('#title');
+        const loadIframe = document.querySelector('#loadIframe');
+
+        function loadPage(page){
+            title.textContent = page;
+            loadIframe.innerHTML = `
+                <iframe width="800" height="600" src="https://futureminds.io" frameborder="0"></iframe>
+            `;
+        }
+    </script>
+</body>
+</html>

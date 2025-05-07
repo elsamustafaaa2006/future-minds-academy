@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            padding: 0;
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        #progress-bar-container {
+            width: 500px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #progress-wrapper {
+            flex-grow: 1;
+            background-color: rgb(228, 228, 228);
+            align-self: stretch;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #progress {
+            position: absolute;
+            border-radius: 10px;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            transition: width 1s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress-bar-container">
+        <span>0%</span>
+        <div id="progress-wrapper">
+            <div id="progress"></div>
+        </div>
+        <span>100%</span>
+    </div>
+
+    <script>
+        setInterval(() => {
+            let num = Math.floor(Math.random() * 101); 
+            setProgress(num);
+        }, 1000);
+
+        function isValidPercentage(num) {
+            return !isNaN(num) && num >= 0 && num <= 100;
+        }
+
+        function getProgressColor(num) {
+            let color;
+            if (num <= 20) {
+                color = "#ff4040"; 
+            } 
+            else if (num <= 50) {
+                color = "#f8e701"; 
+            }
+            else if (num < 80) {
+                color = "#ff7700";  
+            } 
+            else {
+                color = "#40ff40";   
+            }
+            return color;
+        }
+
+        function modifyProgressBar(num, color) {
+            document.getElementById("progress").style.width = `${num}%`;
+            document.getElementById("progress").style.backgroundColor = color;
+            document.getElementById("progress").title = `${num}%`;
+        }
+
+        function setProgress(num) {
+            if (isValidPercentage(num)) {
+                let color = getProgressColor(num);
+                modifyProgressBar(num, color);
+            }
+        }
+    </script>
+
+</body>
+</html>

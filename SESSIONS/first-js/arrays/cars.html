@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+</head>
+
+<body>
+    <h2>All Cars</h2>
+    <table width="50%" border="1">
+        <thead>
+            <th>#</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year</th>
+        </thead>
+        <tbody id="feedcars">
+
+        </tbody>
+    </table>
+
+    <script>
+        let allcars = [
+            { brand: "BMW", model: "740i", year: "2020" },
+            { brand: "Rolls Royce", model: "Phantom", year: "2024" },
+            { brand: "Mercedes", model: "CLS63", year: "2014" }
+        ];
+
+        const feedcars = document.querySelector('#feedcars');
+
+        feedcars.innerHTML = ``;
+        for (let i = 0; i < allcars.length; i++) {
+            feedcars.innerHTML += `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${allcars[i].brand}</td>
+                <td>${allcars[i].model}</td>
+                <td>${allcars[i].year}</td>
+            </tr>
+
+            `;
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

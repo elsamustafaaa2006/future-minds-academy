@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <button id="btn">+</button>
+        <button id="btn2">-</button>
+        <span id="result">0</span>
+    </div>
+
+    <script>
+        let addButton = document.getElementById('btn');
+        let subButton = document.getElementById('btn2');
+        let result = document.getElementById('result');
+
+        let counter = 0;
+
+
+        // function addOne() {
+        //     counter++;
+        //     result.textContent = counter;
+        // }
+
+        function subOne() {
+            counter--;
+            result.textContent = counter;
+        }
+
+        addButton.addEventListener('click', ()=> result.textContent = ++counter)//ni mnyr ma e shkurt
+        subButton.addEventListener('click', subOne )
+    </script>
+</body>
+
+</html>

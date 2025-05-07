@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Intro to the DOM</h1>
+    <a id="myLink" href="https://excalidraw.com">Click Me</a>
+
+    <script>
+        let anchor = document.querySelector('a');
+        anchor.setAttribute('href', 'https://nohello.net')
+        anchor.remove();
+
+        let myNewImage = document.createElement('img');
+        myNewImage.src = 'fma.png'
+        document.body.appendChild(myNewImage)
+
+
+        let a1 = document.getElementById('myLink');
+        let a2 = document.querySelector('.link');
+
+        let heading = document.getElementById('heading');
+        heading.textContent = 'Hello There';
+        heading.innerHTML = 'Hello <em>There</em>';
+
+
+        heading.style.gridTemplateColumns = 'repeat(4, 1fr)'
+    </script>
+</body>
+</html>

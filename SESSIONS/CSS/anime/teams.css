@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper{
+    display: flex;
+    padding: 50px;
+    gap: 50px;
+    font-family: sans-serif;
+}
+
+.card{
+    padding: 20px;
+    border: 2px solid rgb(199, 199, 199);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    color: rgb(84, 84, 84);
+    transition: 0.5;
+   
+
+}
+
+.card ul{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style-type: none;
+}
+
+.card ul i:hover {
+    color: brown;
+    cursor: pointer;
+}
+
+.card:hover{
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+    transform: rotate3d(2, 1, 1, 25deg);
+}
+
+.card-op:hover{
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+    transform: rotate3d(2, 1, 1, -25deg);
+}
+
+.thumb{
+    animation-name: teamphoto;
+    animation-duration: 2s;
+
+
+}
+
+@keyframes teamphoto{
+
+    from {
+        border-radius: 0%;
+    }
+    to{
+        border-radius: 80%;
+    }
+}

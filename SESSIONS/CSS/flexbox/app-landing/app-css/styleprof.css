@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+header {
+    width: 1080px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+   
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    font-size: 12pt;
+    margin-right: 60px;
+
+}
+
+.hero-bldg{
+    background: url(images/hero-bldg.png) repeat-x; 
+    background-position: bottom;
+}
+
+.hero {
+    display: flex;
+    width: 1000px;
+    margin: 20px auto;
+}
+
+.heroLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+
+}
+
+.highlight {
+    display: flex;
+    background-color: #e2eaed;
+    border-radius: 50px;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    padding-right: 25px;
+}
+
+.check {
+    background-color: #feaa25;
+    border-radius: 50px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.check img {
+    width: 30px;
+}
+
+.heroLeft h1{
+    font-size: 60pt;
+}
+
+.heroLeft p{
+    font-size: 18pt;
+    color: #616368;
+}
+
+.btn{
+    background-color: rgb(50, 50, 143);
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 15px 40px;
+    font-size: 12pt;
+    border: none;
+
+}
+
+.btn-link{
+    padding: 20px 40px;
+    border: none;
+    background-color: transparent;
+    color: blue;
+    font-size: 12pt;
+}
+
+section{
+    width: 1080px;
+    margin:100px auto ;
+}
+
+h4{
+    margin-top: 100px;
+    text-align: center;
+    font-size: 17pt;
+    
+}
+
+.clients{
+    margin-top: 50px;
+    list-style-type: none; 
+    display: flex ;
+    gap: 140px;
+  
+}
+
+.secondpart {
+    display: flex;
+    margin: 20px auto;
+    width: 1000px;
+    align-items: center;
+    gap: 30px;
+}
+
+.secondpart p{
+    color: #616368;
+    font-size: 12pt;
+}
+
+.subtitle h2{
+    color: #242f51;
+    font-size:25pt;
+    margin-bottom: 20px;
+}
+
+.fast.div:first-child{
+    
+}
+
+
+
+
+
+
+.prices {
+    width: 630px;
+    margin: 100px auto;
+    text-align: center;
+}
+.prices h1 { font-size: 20pt; margin-bottom: 20px; }
+.prices p { text-align: center; margin-bottom: 50px; color: #616368; }
+.cards ul { list-style-type: none; }
+.actions { margin-bottom: 30px; position: relative; }
+.annually {
+    padding: 15px 40px 15px 170px;
+    font-size: 12pt;
+    background: transparent;
+    border-radius: 40px;
+    border: 1px solid gray;
+    font-weight: bold;
+    color: #616368;
+}
+.monthly {
+    padding: 13px 40px;
+    font-size: 12pt;
+    background-color: blue;
+    border-radius: 40px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+.cards {
+    display: flex;
+    gap: 40px;
+}
+.card {
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.card-upper {
+    padding: 30px 40px;
+    background: linear-gradient(to bottom, #ffffff, #e5e5e5);
+    border-radius: 20px 20px 0px 0px;
+}
+.card-upper h1 { font-size: 40pt; }
+.card-upper h1 span { font-size: 15pt; font-weight: lighter; color: rgb(152, 152, 152); }
+.card-upper p { margin-bottom: 10px; font-size: 11pt; }
+.card-upper h2 { font-size: 12pt; }
+.card-lower { padding: 30px 40px; }
+

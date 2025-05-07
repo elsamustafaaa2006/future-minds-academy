@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers</title>
+    <style>
+        .wrapper {
+            background-color: antiquewhite;
+            padding: 30px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        .wrapper .left-side {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .wrapper .left-side > div {
+            background-color: blueviolet;
+            color: white;
+            padding: 10px 40px;
+            border-radius: 5px;
+            font-size: 16pt;
+            cursor: pointer;
+        }
+        .wrapper .left-side > div:hover {
+            background-color: rgb(73, 14, 129);
+        }
+        .wrapper .right-side h1 {
+            padding: 50px 20px;
+            border: 1px gray solid;
+            border-radius: 10px;
+            font-size: 40pt;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="left-side">
+            <div onclick="passNum(1)">1</div>
+            <div onclick="passNum(2)">2</div>
+            <div onclick="passNum(3)">3</div>
+            <div onclick="passNum(4)">4</div>
+            <div onclick="passNum(5)">5</div>
+        </div>
+
+        <div class="right-side">
+            <h1 id="thenum">0</h1>
+        </div>
+
+    </div>
+
+    <script>
+        const thenum = document.querySelector('#thenum');
+        function passNum(num){
+            thenum.textContent = num;
+
+        }
+        
+    </script>
+</body>
+
+</html>

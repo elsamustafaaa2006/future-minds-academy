@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #eaeaea;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .highlight {
+            border: 3px solid rgb(203, 192, 131);
+            background-color: #fff7cc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="allmovies"></div>
+
+    <script>
+        let movies = [
+            {
+                name: 'The Godfather',
+                releaseYear: 1972,
+                rating: 9.2,
+                mainActors: ['Marlon Brando', 'Al Pacino', 'James Caan']
+            },
+
+            {
+                name: 'The Shawshank Redemption',
+                releaseYear: 1994,
+                rating: 9.3,
+                mainActors: ['Tim Robbins', 'Morgan Freeman', 'Bob Gunton']
+            },
+
+            {
+                name: 'Pulp Fiction',
+                releaseYear: 1994,
+                rating: 8.9,
+                mainActors: ['John Travolta', 'Uma Thurman', 'Samuel L. Jackson']
+            },
+
+            {
+                name: 'The Dark Knight',
+                releaseYear: 2008,
+                rating: 9.0,
+                mainActors: ['Christian Bale', 'Heath Ledger', 'Aaron Eckhart']
+            },
+
+            {
+                name: 'Forrest Gump',
+                releaseYear: 1994,
+                rating: 8.8,
+                mainActors: ['Tom Hanks', 'Robin Wright', 'Gary Sinise']
+            }
+        ];
+
+
+        movies = movies.sort((a, b) => {
+            if (a.rating < b.rating) {
+                return 1;  
+            }
+            else {
+                return -1;  
+            }
+        });
+
+        let allmovies = document.getElementById("allmovies");
+
+
+        for (let i = 0; i < movies.length; i++) {
+            let movie = movies[i];
+
+            let card = document.createElement("div");
+            card.className = "card";
+
+
+            if (i === 0) {
+                card.classList.add("highlight");
+            }
+
+            let title = document.createElement("h2");
+            title.textContent = movie.name;
+            card.appendChild(title);
+
+            let year = document.createElement("p");
+            year.textContent = "Release Year: " + movie.releaseYear;
+            card.appendChild(year);
+
+            let rating = document.createElement("p");
+            rating.textContent = "Rating: " + movie.rating;
+            card.appendChild(rating);
+
+            let actors = document.createElement("p");
+            actors.textContent = "Main Actors: " + movie.mainActors;
+            card.appendChild(actors);
+
+            allmovies.appendChild(card);
+        }
+
+    </script>
+</body>
+
+</html>

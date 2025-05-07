@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    gap: 40px;
+    padding: 50px;
+}
+
+.card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    border: 2px solid rgb(203, 203, 203);
+    position: relative;
+}
+
+.thumb {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    transition: 0.5s;
+}
+
+.thumb:hover {
+    transform: translateY(-60px);
+}
+
+.tools {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+}

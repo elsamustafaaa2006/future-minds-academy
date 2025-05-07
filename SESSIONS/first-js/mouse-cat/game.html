@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse and cat</title>
+    <style>
+        #terrain{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500" id="terrain"></canvas>
+
+    <script>
+        const terrain = document.querySelector('#terrain');
+        let ctx = terrain.getContext('2d');
+
+        let cat = new Image();
+            cat.src = "cat.png";
+
+        let catObj = {x:200, y:200}
+
+            cat.onload = function(){
+                 ctx.drawImage(cat, catObj.x, catObj.y);
+             }
+
+        addEventListener('keydown', (e)=>{
+            ctx.clearRect(0,0,500,500);
+            
+            if (e.key =="ArrowRight"){
+                catObj.x +=5;
+                ctx.drawImage(cat, catObj.x, catObj.y);
+            }
+
+            if (e.key =="ArrowLeft"){
+                catObj.x -=5;
+                ctx.drawImage(cat, catObj.x, catObj.y);
+            }
+            if (e.key =="ArrowUp"){
+                catObj.y -=5;
+                ctx.drawImage(cat, catObj.x, catObj.y);
+            }
+            if (e.key =="ArrowDown"){
+                catObj.y +=5;
+                ctx.drawImage(cat, catObj.x, catObj.y);
+            }
+
+            
+
+
+         });
+
+
+    </script>
+</body>
+</html>

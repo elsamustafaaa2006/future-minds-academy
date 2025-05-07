@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables with pseudoclasses</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        table {
+            width: 40%;
+            margin: 4em auto;
+            text-align: center;
+            font-size: 1.5em;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: rgb(3, 155, 3);
+            color: black;
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(2, 81, 2);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            padding: 0;
+            background-color: rgb(46, 196, 46);
+            color: white;
+        }
+
+        th,td {
+            padding: 1em;
+            border-bottom: 0, 2em solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="pd">
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Age</th>
+            <th>Hobby</th>
+        </tr>
+
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>21</td>
+            <td>Football</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>21</td>
+            <td>Football</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>21</td>
+            <td>Football</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>21</td>
+            <td>Football</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>21</td>
+            <td>Football</td>
+        </tr>

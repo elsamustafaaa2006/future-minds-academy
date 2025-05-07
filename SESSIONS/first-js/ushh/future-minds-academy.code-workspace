@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../../Desktop/ushtrime"
+		},
+		{
+			"path": "../../../../fakulltet"
+		},
+		{
+			"path": "../../../../helix"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "future-minds-academy"
+	}
+}

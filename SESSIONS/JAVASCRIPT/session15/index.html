@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn">Click Me</button>
+    
+    <script>
+        let myButton = document.getElementById('btn');
+
+        function hello(){
+            console.log('Hello');
+        }
+
+        myButton.addEventListener('mouseenter', hello)
+        myButton.addEventListener('click', hello)
+
+    </script>
+</body>
+</html>

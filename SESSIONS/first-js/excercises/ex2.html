@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="counting"> </h1>
+    <h1 id="countingBack"> </h1>
+
+
+    <script>
+
+
+        const counting = document.getElementById('counting');
+        const countingBack = document.getElementById('countingBack');
+
+        for (let i = 1; i <= 10; i++) {
+
+            
+            if(i ==10){
+                counting.innerHTML += i;
+            }
+
+            else{
+                counting.innerHTML += i + ', ';
+            }
+        }
+
+        for (let j = 10; j>= 1; j--) {
+
+            
+
+
+            if(j == 1){
+                countingBack.innerHTML += j ;
+            }
+
+            else{
+                countingBack.innerHTML += j + ', ';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" placeholder="name" id="name">
+    <button onclick="predictAge()">Predict age</button>
+    <span id="result"></span>
+
+    <script>
+        function predictAge() {
+            let input = document.getElementById('name');
+            let name = input.value;
+
+            if(!name){
+                alert('Write a name before trying')
+                return
+            }
+
+            fetch(`https:api.agify.io/?name=${name}`)
+                .then(res => res.json())
+                .then(data => {
+                    let resultEl = document.getElementById('result');
+                    resultEl.textContent = data.age;
+                });
+
+        }
+    
+
+      
+
+    </script>
+</body>
+
+</html>

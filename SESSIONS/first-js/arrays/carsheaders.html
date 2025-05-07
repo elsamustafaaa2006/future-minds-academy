@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+</head>
+
+<body>
+    <h2>All Cars</h2>
+    <table width="50%" border="1">
+        <thead>
+            <tr id="carsHeaders">
+                <th>#</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody id="feedcars">
+
+        </tbody>
+    </table>
+
+    <script src="data.js"></script>
+    <script>
+
+        const feedcars = document.querySelector('#feedcars');
+        const carsHeaders = document.querySelector('#carsHeaders');
+
+        let myHeaders = allcars[0];
+        let mycars = allcars[1].cars;
+
+        carsHeaders.innerHTML = ``;
+        for (let j = 0; j < myHeaders.length; j++) {
+            carsHeaders.innerHTML += `
+            
+                <th>${myHeaders[j]}</th>
+                
+            `;
+        }
+
+
+        feedcars.innerHTML = ``;
+        for (let i = 0; i < mycars.length; i++) {
+            feedcars.innerHTML += `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${mycars[i].brand}</td>
+                <td>${mycars[i].model}</td>
+                <td>${mycars[i].year}</td>
+            </tr>
+
+            `;
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; 
+    height: 100vh;
+   
+}
+
+
+section {
+    height: 25vh; 
+    padding: 0.1em 1em; 
+}
+
+
+section:nth-child(odd) {
+    background-color: pink;
+}
+section:nth-child(even) {
+    background-color: gray; 
+}
+
+
+h1 {
+    font-size: 2em; 
+    margin: 0.2em 0;
+}
+
+
+p {
+    font-size: 1.2em; 
+    margin: 0.2em 0;
+}
+
+
+hr {
+    width: 33%; 
+    border: 1px solid red; 
+    margin: 1em auto; 
+}

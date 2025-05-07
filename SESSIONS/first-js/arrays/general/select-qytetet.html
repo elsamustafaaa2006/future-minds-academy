@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qytetet</title>
+</head>
+<body>
+    <h2>Qytetet</h2>
+    <select name="" id="qytetet" style="padding: 10px; width: 200px;">
+        <option value="06">Gjilani</option>
+        <option value="01">Prishtina</option>
+        <option value="03">Peja</option>
+        <option value="04">Prizreni</option>
+        <option value="05">Ferizaj</option>
+        <option value="02">Mitrovica</option>
+        <option value="07">Gjakova</option>
+    </select>
+    <h1 id="selectedCity">Selected City</h1>
+
+    <script>
+        const qytetet = document.querySelector('#qytetet');
+        const selectedCity = document.querySelector('#selectedCity');
+
+        qytetet.addEventListener('change', (obj)=>{
+            let digit = obj.target.value;
+            //selectedCity.textContent = obj.target.value;
+            switch(digit){
+                case '01':
+                selectedCity.textContent = 'Prishtina (' + digit + ')';
+                break;
+
+                case '02':
+                selectedCity.textContent = 'Mitrovica (' + digit + ')';
+                break;
+
+                case '03':
+                selectedCity.textContent = 'Peja (' + digit + ')';
+                break;
+
+                case '04':
+                selectedCity.textContent = 'Prizreni (' + digit + ')';
+                break;
+
+                case '05':
+                selectedCity.textContent = 'Ferizaji (' + digit + ')';
+                break;
+
+                case '06':
+                selectedCity.textContent = 'Gjilani (' + digit + ')';
+                break;
+
+                case '07':
+                selectedCity.textContent = 'Gjakova (' + digit + ')';
+                break;
+
+                default:
+                    selectedCity.textContent = 'Not here';
+            }
+        });
+    </script>
+</body>
+</html>

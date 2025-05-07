@@ -1,0 +1,25 @@
+.logo {
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li {
+    padding: 10px 40px;
+    background-color: bisque;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    background-color: rgb(216, 180, 135);
+}
+
+body {
+    text-align: center;
+}

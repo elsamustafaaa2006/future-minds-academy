@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set interval</title>
+</head>
+
+<body>
+    <h1 id="timer"> Sec: 0</h1>
+
+    <script>
+
+        const timer = document.querySelector('#timer');
+        let counter = 0;
+
+        let timerInit = setInterval(timeInfo, 1000);
+
+        function timeInfo() {
+
+            if (counter != 10) { counter++; } else{clearInterval(timerInit);}
+            timer.textContent = "Sec: " + counter;
+
+
+            console.log(counter);
+        }
+
+    </script>
+</body>
+
+</html>

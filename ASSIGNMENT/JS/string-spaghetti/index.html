@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //detyra 1
+        let text = ' hello Dolly';
+        let firstLetter = text.trim().charAt(0).toUpperCase();
+        console.log(firstLetter);
+
+
+
+        //detyra 2
+        let time = '05:36 PM';
+
+        let hours = parseInt(time.substring(0, 2));
+        let minutes = parseInt(time.substring(3, 5));
+
+        hours++;
+
+        console.log(`${hours} : ${minutes} PM`)
+
+
+
+
+        //detyra3
+        const input = "Ottawa, -4°C";
+
+        const city = input.substring(0, 8);
+        const temperature = parseInt(input.substring(10, 12));
+
+        console.log(`${city}, ${temperature}°C`);  
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

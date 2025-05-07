@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="header">
+           <div class="window">
+              <span class="red"></span>
+              <span class="yellow"></span>
+              <span class="green"></span>
+           </div>
+           <div class="input">
+              1378 - 12 = <span>1336</span>
+           </div>
+        </div>
+        <div class="keys">
+           <div class="row">
+              <div class="number">
+                 <span onclick="calculate(7)">7</span>
+                 <span onclick="calculate(8)">8</span>
+                 <span onclick="calculate(9)">9</span>
+              </div>
+              <div class="symbol">
+                 <span onclick="calculate('/')">÷</span>
+              </div>
+           </div>
+           <div class="row">
+              <div class="number">
+                 <span onclick="calculate(4)">4</span>
+                 <span onclick="calculate(5)">5</span>
+                 <span onclick="calculate(6)">6</span>
+              </div>
+              <div class="symbol">
+                 <span onclick="calculate('-')">-</span>
+              </div>
+           </div>
+           <div class="row">
+              <div class="number">
+                 <span onclick="calculate(1)">1</span>
+                 <span onclick="calculate(2)">2</span>
+                 <span onclick="calculate(3)">3</span>
+              </div>
+              <div class="symbol">
+                 <span onclick="calculate('+')">+</span>
+              </div>
+           </div>
+           <div class="row">
+              <div class="number">
+                 <span class="dull">AC</span>
+                 <span onclick="calculate(0)">0</span>
+                 <span onclick="calculate(',')">,</span>
+              </div>
+              <div class="symbol action">
+                 <span onclick="calculate('calc')">=</span>
+              </div>
+           </div>
+        </div>
+     </div>
+
+     <script>
+        const input = document.querySelector('.input');
+        input.innerHTML = '';
+        let holdOut = '';
+        let lastChar = '';
+        let equalSign = false;
+
+        function calculate(n){
+            if(n == "calc"){
+                input.innerHTML += " = <span>" + eval(input.innerHTML) + "</span>";
+                equalSign = true;
+            } 
+
+            else {
+
+                if(equalSign){
+                    input.innerHTML ='';
+                    equalSign = false;
+                }
+                
+
+
+                else{
+                    if(lastChar === "+" && n === "+")
+                    {return}
+                    if(lastChar === "-" && n === "-")
+                    {return}
+                    if(lastChar === "/" && n === "/")
+                    {return}
+                    input.innerHTML +=n;
+                }
+
+            }
+            holdOut = input.innerHTML;
+            lastChar = holdOut.slice(-1);
+        }
+     </script>
+</body>
+</html>

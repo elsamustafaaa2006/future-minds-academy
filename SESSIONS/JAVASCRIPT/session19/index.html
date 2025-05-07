@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="card-1">
+        <h1></h1>
+        <p></p>
+    </div>
+    <div id="card-2">
+        <h1></h1>
+        <p></p>
+    </div>
+    <script>
+        class UserCard{
+            constructor(id, name, description){
+                this.element = document.getElementById(id);
+                this.setName(name);
+                this.setDescription(description);
+            }
+            setName(newName){
+                this.name = newName;
+                this.element.querySelector('h1').textContent = this.name;
+            }
+            setDescription(newDescription){
+                this.description = newDescription;
+                this.element.querySelector('p').textContent = this.description;
+            }
+        }
+
+        let card1 = new UserCard('card-1', 'Elsa Mustafa', 'Software Engineer')
+        let card2 = new UserCard('card-2', 'Mimoza Kadriu', 'Programerja ma e forta')
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .wrapper {
+            width: 500px;
+            height: 500px;
+            background-color: bisque;
+            position: relative;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box"></div>
+    </div>
+
+    <script>
+        const box = document.querySelector(".box");
+
+        setInterval(render, 10);
+        let x = 0;
+        let y = 0;
+
+        function render() {
+            if (x < 450) {
+                x++;
+                box.style.left = x + "px";
+            }
+            else {
+                if(y<450)
+                {
+                    y++;
+                    box.style.top = y + "px";
+                }
+                
+            }
+        }
+
+    </script>
+</body>
+
+</html>

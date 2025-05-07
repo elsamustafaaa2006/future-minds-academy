@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+    <script>
+
+
+        let number = parseInt(prompt("Enter number:"));
+        let current;
+
+        console.log(`Hailstone sequence starting from:${number}`);
+
+        for (current = number; ;) {
+            console.log(current);
+
+            if (current === 1) {
+                break;
+            }
+
+            if (current % 2 === 0) {
+                current /= 2;
+            }
+
+         else {
+                current = current * 3 + 1;
+             }
+         }
+
+
+
+        
+        // let number = parseInt(prompt("Enter a positive integer:"));
+        // let current = number; 
+
+        // console.log(`Hailstone sequence starting from: ${number}`);
+
+       
+        // while (current !== 1) {
+        //     console.log(current);
+
+        //     if (current % 2 === 0) {
+        //         current /= 2; // If current is even, divide by 2
+        //     } else {
+        //         current = current * 3 + 1; // If current is odd, multiply by 3 and add 1
+        //     }
+        // }
+
+        // console.log(current); // Finally, print 1
+    </script>
+
+
+
+</body>
+
+</html>

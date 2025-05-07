@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count up and down</title>
+    <style>
+        .wrapper { display: flex; gap: 20px; align-items: center; }
+        .wrapper button { padding: 30px 15px; font-size: 20pt; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <button id="subnum">-</button>
+        <h1 id="shownum">0</h1>
+        <button id="addnum">+</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const addnum  = document.querySelector('#addnum');
+        const subnum  = document.querySelector('#subnum');
+        const shownum = document.querySelector('#shownum');
+        const message = document.querySelector('#message');
+
+        let thenum = 5;
+            shownum.textContent = thenum;   
+        
+        addnum.addEventListener('click', function(){
+            if(thenum != 10){ thenum++; message.textContent =" "; }
+            else { message.textContent = "You have reached the limit";  }
+            shownum.textContent = thenum;
+        });
+        subnum.addEventListener('click', function(){
+            if(thenum != 0){ thenum--; message.textContent =" "; }
+            else { message.textContent = "You have reached the limit"; }
+            shownum.textContent = thenum;
+        });
+
+    </script>
+
+</body>
+</html>
